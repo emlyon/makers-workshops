@@ -1,12 +1,10 @@
 ## Atelier electronique / arduino
 
---------
-
 #### exemple 1 : Make a led glow
 [Test me on Tinkercad](https://www.tinkercad.com/things/03WDZBVcr39)
 ![alt text](./imgs/diode-explode.png "simple led")
 Arduino Code :
-```java
+```cpp
 ///Nothing here
 ```
 --------
@@ -14,7 +12,7 @@ Arduino Code :
 [Test me on Tinkercad](https://www.tinkercad.com/things/163mTSp0VBm)
 ![alt text](./imgs/simple-button.png "simple button")
 Arduino Code :
-```java
+```cpp
 ///Nothing here
 ```
 --------
@@ -24,17 +22,15 @@ Arduino Code :
 ![alt text](./imgs/diode-blink.png "led blink")
 
 Arduino Code :
-```java
-void setup()
-{
-  pinMode(13, OUTPUT);
+```cpp
+void setup() {
+  pinMode(13, OUTPUT); // set the pin 13 as an output pin, ie electric signal will come out of this pin
 }
 
-void loop()
-{
-  digitalWrite(13, HIGH);
+void loop() {
+  digitalWrite(13, HIGH); // turn on pin 13
   delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(13, LOW);
+  digitalWrite(13, LOW); // turn off pin 13
   delay(1000); // Wait for 1000 millisecond(s)
 }
 ```
@@ -43,22 +39,24 @@ void loop()
 [Test me on Tinkercad](https://www.tinkercad.com/things/cKW6QXsZYLM)
 ![alt text](./imgs/prog-button.png "programmed button")
 Arduino Code :
-```java
+```cpp
+// we are storing pin numbers in variables. "int" means integer and as such are used to store integer numbers
 int diode = 13;
 int button = 7;
 
 void setup() {
   pinMode(diode, OUTPUT);
-  pinMode(button, INPUT);
+  pinMode(button, INPUT); // set the pin 7 as an input pin, ie electric signal will come in this pin, so that we can read it
 }
 
 void loop() {
-  //SI bouton appuyé
-  if (digitalRead(button) == HIGH){
+  // if button is pressed
+  if ( digitalRead(button) == HIGH) {
     //ALORS
     digitalWrite(diode, LOW);
-  } else {
-    //sinon...
+  }
+  else {
+    // else...
     digitalWrite(diode, HIGH);
   }
 }
@@ -70,10 +68,10 @@ void loop() {
 ![alt text](./imgs/light-sensor.png "analog arduino")
 
 Arduino Code :
-```java
-int sensorPin = A0;    // select the input pin for the light sensor
-int ledPin = 11;      // select the pin for the LED
-int sensorValue = 0;  // variable to store the value coming from the sensor
+```cpp
+int sensorPin = A0; // select the input pin for the light sensor
+int ledPin = 11; // select the pin for the LED
+int sensorValue = 0; // variable to store the value coming from the sensor
 
 void setup() {
   // declare the ledPin as an OUTPUT and sensorPin as INPUT
@@ -96,7 +94,7 @@ void loop() {
 ![alt text](./imgs/temp-sensor.png "analog arduino")
 
 Arduino Code :
-```java
+```cpp
 // named constant for the pin the sensor is connected to
 const int sensorPin = A0;
 // room temperature in Celsius
@@ -168,7 +166,7 @@ void loop() {
 ![alt text](./imgs/motor-transistor.png "analog arduino")
 
 Arduino Code :
-```java
+```cpp
 void setup() {
   pinMode(8, OUTPUT);
   pinMode(7, INPUT);
@@ -189,7 +187,7 @@ void loop(){
 ![alt text](./imgs/servo.png "analog arduino")
 
 Arduino Code :
-```java
+```cpp
 #include <Servo.h>
 
 Servo myservo;  // create servo object to control a servo
