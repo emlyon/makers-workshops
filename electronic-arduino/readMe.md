@@ -1,4 +1,4 @@
-## Atelier electronique / arduino
+## Getting started with electronic and arduino
 
 #### exemple 1 : Make a led glow
 [Test me on Tinkercad](https://www.tinkercad.com/things/03WDZBVcr39)
